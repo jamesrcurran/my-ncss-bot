@@ -14,4 +14,5 @@ def lol_bot():
   return f'lol {text}'
 
 # Start the web server!
-app.run()
+if __name__ == '__main__':
+  app.run()
