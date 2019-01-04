@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 # Create the web server
 app = Flask(__name__)
@@ -11,7 +11,10 @@ def lol_bot():
   text = request.values.get('text')
 
   # This bot lols at every command it gets sent!
-  return f'lol {text}'
+  return jsonify({
+    'response_type': 'in_channel',
+    'text': f'lol {text}',
+  })
 
 # Start the web server!
 if __name__ == '__main__':
