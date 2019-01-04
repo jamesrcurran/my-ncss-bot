@@ -4,7 +4,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # You can message lol_bot via <your website>/lol
-@app.route('/lol')
+@app.route('/lol', methods=['GET', 'POST'])
 def lol_bot():
   # Get the value of the 'text' query parameter
   # request.values is a dictionary (cool!)
